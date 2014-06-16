@@ -1,12 +1,10 @@
 $(document).ready(function() { 
-  console.log('hey')
 
 	$.fn.followTo = function (pos) {
     var $this = this,
       $window = $(window);
 
   $window.scroll(function (e) {
-    console.log('hey')
     if ($window.scrollTop() > pos) {
       $this.css({
           position: 'absolute',
@@ -20,7 +18,7 @@ $(document).ready(function() {
       }
     });
 	};
-  console.log('hey')
+
 	$('.name').followTo(710);
 
 
