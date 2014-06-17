@@ -20,7 +20,7 @@ hr {
 
 .homepage-top {
   background-image: url('images/alan-background.jpg');
-  min-height: 700px;
+  height: 700px;
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -175,5 +175,40 @@ footer {
 .fa {
   font-size: 30px;
   text-align: center;
+}
+
+
+@media screen and (max-width: 1216px) {
+  .homepage-top {
+    height: 600px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .name {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 995px) {
+  .about-me-content {
+    width: 400px;
+    margin-left: 250px;
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .homepage-top {
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .about-me {
+    margin-top: 50px;
+  }
+  .homepage-top {
+    height: 450px;
+  }
 }
 
