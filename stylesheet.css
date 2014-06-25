@@ -177,7 +177,7 @@ footer {
   text-align: center;
 }
 
-@media screen and (min-width: 1550px) {
+@media screen and (min-width: 1510px) {
   .name {
     margin-left: 220px;
   }
