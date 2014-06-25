@@ -22,7 +22,7 @@ hr {
   background-image: url('images/alan-background.jpg');
   height: 700px;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   border-top: 6px solid #7F7773;
 }
 
