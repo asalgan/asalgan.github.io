@@ -23,17 +23,17 @@ hr {
   height: 700px;
   background-repeat: no-repeat;
   background-size: 100%;
+  border-top: 6px solid #7F7773;
 }
 
 .name {
   color: #7F7773;
-  margin-right: 400px;
   -webkit-transform: rotate(-90deg);
   -moz-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   -o-transform: rotate(-90deg);
   position: fixed;
-  padding-left: 70px;
+  padding-left: 6%;
   margin-top: 300px;
   opacity: .7;
 }
