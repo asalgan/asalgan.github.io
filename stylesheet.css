@@ -49,8 +49,8 @@ hr {
 }
 
 .about-me {
-min-height: 350px;
-margin-top: 150px;
+  min-height: 350px;
+  margin-top: 150px;
 }
 
 .about-me-header {
@@ -139,7 +139,7 @@ margin-top: 150px;
 
 .my-apps-content-lead {
   -webkit-font-smoothing: antialiased;
-  font-family: "proxima-nova", sans-serif;
+  font-family: arimo, sans-serif;
   line-height: 28px;
   font-weight: 300;
   color: #181818;
@@ -150,7 +150,7 @@ margin-top: 150px;
 
 .my-apps-content {
   -webkit-font-smoothing: antialiased;
-  font-family: "proxima-nova", sans-serif;
+  font-family: arimo, sans-serif;
   line-height: 28px;
   font-weight: 300;
   color: #181818;
