@@ -1,25 +1,15 @@
 $(document).ready(function() { 
 
-	// $.fn.followTo = function (pos) {
- //    var $this = this,
- //      $window = $(window);
+  $(window).scroll(function() {
+    $('.tile').each(function(){
+    var imagePos = $(this).offset().top;
 
- //  $window.scroll(function (e) {
- //    if ($window.scrollTop() > pos) {
- //      $this.css({
- //          position: 'absolute',
- //          top: pos
- //       });
- //    } else {
- //        $this.css({
- //          position: 'fixed',
- //          top: 0
- //        });
- //      }
- //    });
-	// };
-
-	// $('.name').followTo(710);
+    var topOfWindow = $(window).scrollTop();
+      if (imagePos < topOfWindow+400) {
+        $(this).addClass("slideUp");
+      }
+    });
+  });
 
 
 
@@ -64,3 +54,7 @@ $(document).ready(function() {
 
 
 });
+
+
+
+
