@@ -1,5 +1,27 @@
+body {
+  background: #f7f7f7;
+  -webkit-font-smoothing: antialiased;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  list-style: none;
+}
+
+.clearfix {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
 .container {
   height: 100%;
+  margin: 0 auto;
 }
 
 img {
@@ -19,14 +41,77 @@ hr {
 
 
 .homepage-top {
-  background-image: url('images/alan-background.jpg');
+  background-color: #5B5EA6;
   height: 700px;
-  background-repeat: no-repeat;
   background-size: cover;
   border-top: 6px solid #7F7773;
 }
 
-.name {
+.profile {
+  position: relative;
+  margin-top: 150px;
+  margin-left: 100px;
+  display: inline-block;
+}
+.alan {
+  background-image: url('images/alan2.png');
+  width: 210px;
+  background-size: cover;
+  border-radius: 100%;
+  height: 210px;
+  border: 3px solid white;
+  background-repeat: no-repeat;
+}
+
+.social {
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  width: 260px;
+  height: 260px;
+  padding: 0;
+  border-radius: 50%;
+  list-style: none;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+nav.find-me > *:nth-of-type(1) {
+  -webkit-transform: rotate(63deg) translate(135px) rotate(-63deg);
+  -moz-transform: rotate(63deg) translate(135px) rotate(-63deg);
+  -ms-transform: rotate(63deg) translate(135px) rotate(-63deg);
+  -o-transform: rotate(63deg) translate(135px) rotate(-63deg);
+  transform: rotate(63deg) translate(135px) rotate(-63deg);
+}
+nav.find-me > *:nth-of-type(2) {
+  webkit-transform: rotate(85deg) translate(130px) rotate(-85deg);
+  -moz-transform: rotate(85deg) translate(130px) rotate(-85deg);
+  -ms-transform: rotate(85deg) translate(130px) rotate(-85deg);
+  -o-transform: rotate(85deg) translate(130px) rotate(-85deg);
+  transform: rotate(85deg) translate(130px) rotate(-85deg);
+}
+nav.find-me>*:nth-of-type(3) {
+  -webkit-transform: rotate(107deg) translate(125px) rotate(-107deg);
+  -moz-transform: rotate(107deg) translate(125px) rotate(-107deg);
+  -ms-transform: rotate(107deg) translate(125px) rotate(-107deg);
+  -o-transform: rotate(107deg) translate(125px) rotate(-107deg);
+  transform: rotate(107deg) translate(125px) rotate(-107deg);
+}
+nav.find-me>* {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -19px;
+  color: white;
+}
+
+nav > a > .fa {
+  font-size: 20px;
+}
+
+/*.name {
   color: #7F7773;
   -webkit-transform: rotate(-90deg);
   -moz-transform: rotate(-90deg);
@@ -36,9 +121,9 @@ hr {
   padding-left: 6%;
   margin-top: 300px;
   opacity: .7;
-}
+}*/
 
-.first-name {
+/*.first-name {
   font-family: changa-one, sans-serif;
   font-size: 70px;
 }
@@ -47,17 +132,17 @@ hr {
   font-family: wire-one, sans-serif;
   font-size: 86px;
 }
+*/
 
 .about-me {
-  min-height: 350px;
-  margin-top: 150px;
+  margin-top: 10%;
 }
 
 .about-me-header {
   font-size: 40px;
   font-family: wire-one, sans-serif;
   text-align: right;
-  color: #7F7773;
+  color: white;
   font-weight: 600;
   letter-spacing: 1px;
 }
@@ -69,7 +154,7 @@ hr {
   text-align: left;
   line-height: 26px;
   font-family: arimo, sans-serif;
-  color: #737D7C;
+  color: white;
 }
 
 .homepage-second {
@@ -241,101 +326,69 @@ footer {
   }
 }*/
 
-
-
-.overlay {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 200;
-  background: rgba(153,204,51,0.9);
+#mosaic {
+  margin-top:-80px;
 }
 
-/* Overlay closing cross */
-.overlay .overlay-close {
-  width: 80px;
-  height: 80px;
-  position: absolute;
-  right: 20px;
-  top: 20px;
+.mosaic-list {
+  position: relative;
+  height: 740px;
+}
+
+.tile {
+  float: left;
+  width: 285px;
   overflow: hidden;
-  border: none;
-  background: url('images/cross.png') no-repeat center center;
-  text-indent: 200%;
-  color: transparent;
-  outline: none;
-  z-index: 100;
-}
-
-/* Menu style */
-.overlay nav {
-  text-align: center;
-  position: relative;
-  top: 50%;
-  height: 60%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-.overlay ul {
   list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  display: inline-block;
-  height: 100%;
-  position: relative;
+  position: absolute;
 }
 
-.overlay ul li {
-  display: block;
-  height: 20%;
-  height: calc(100% / 5);
-  min-height: 54px;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+.content {
+  height: 360px;
+  background-color: white;
 }
 
-.overlay ul li a {
-  font-size: 54px;
-  font-weight: 300;
-  display: block;
-  color: #fff;
-  -webkit-transition: color 0.2s;
-  transition: color 0.2s;
+.image {
+  height: 240px;
+  background-color: blue;
 }
 
-.overlay ul li a:hover,
-.overlay ul li a:focus {
-  color: #f0f0f0;
+#tile1 {
+  left: 0px;
+  top: 0px;
 }
 
-/* Effects */
-.overlay-scale {
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transform: scale(0.9);
-  transform: scale(0.9);
-  -webkit-transition: -webkit-transform 0.2s, opacity 0.2s, visibility 0s 0.2s;
-  transition: transform 0.2s, opacity 0.2s, visibility 0s 0.2s;
+#tile2 {
+  left: 285px;
+  top: 0px;
 }
 
-.overlay-scale.open {
-  visibility: visible;
-  opacity: 1;
-  -webkit-transform: scale(1);
-  transform: scale(1);  
-  -webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
-  transition: transform 0.4s, opacity 0.4s;
+#tile3 {
+  left: 570px;
+  top: 0px;
 }
 
-@media screen and (max-height: 30.5em) {
-  .overlay nav {
-    height: 70%;
-    font-size: 34px;
-  }
-  .overlay ul li {
-    min-height: 34px;
-  }
+#tile4 {
+  left:855px;
+  top:0px;
+}
+
+#tile5 {
+  left: 0px;
+  top: 360px;
+}
+
+#tile6 {
+  left: 285px;
+  top: 240px;
+}
+
+#tile7 {
+  left: 570px;
+  top: 360px;
+}
+
+#tile8 {
+  left:855px;
+  top: 240px;
 }

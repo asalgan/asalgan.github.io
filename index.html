@@ -6,7 +6,8 @@
     <title>Alan Salganik</title>
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="stylesheet.css.scss">
+    <link rel="stylesheet" href="overlay.css">
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -25,29 +26,33 @@
 
     <section class="homepage-top">
       <div class="container">
-        <h1 class="name col-md-offset-2"><span class="first-name">Alan</span><span class="last-name">Salganik</span></h1>
-        <div class="about-me col-md-6 col-md-offset-5">
+        <div class="profile">
+          <div class="alan"></div>
+          <nav class="find-me">
+            <a href="mailto:asalganik1@gmail.com" title="Email"><i class="fa fa-envelope-o"></i></a>
+            <a href="https://github.com/asalgan" title="Github" target="_blank"><i class="fa fa-github-alt"></i></a>
+            <a href="www.linkedin.com/pub/alan-salganik/10/560/179/" title="LinkedIn" target="_blank"><i class="fa fa-linkedin"></i></a>
+          </nav>
+        </div>
+        <div class="about-me col-md-6 ">
           <h1 class="about-me-header">always learning.</h1>
           <p class="about-me-content col-md-12">Hi, my name is Alan Salganik. I like to build websites using Ruby on Rails, then make them look good using HTML5, CSS3, JavaScript/jQuery, Less, Sass, and more. I call Chicago my home. When I'm not building, you'll find me reading about ways I can improve my code, design trends, what's new in tech, or exploring a new coffee shop.</p>
         </div>
       </div>
     </section>
-
-    <section>
-      <p><button id="trigger-overlay" type="button">Open Overlay</button></p>
+    
+    <section class="container" id="mosaic">
+      <ul class="mosaic-list">
+        <li class="tile content" id="tile1"></li>
+        <li class="tile image" id="tile2"></li>
+        <li class="tile content" id="tile3"></li>
+        <li class="tile image" id="tile4"></li>
+        <li class="tile image" id="tile5"></li>
+        <li class="tile content" id="tile6"></li>
+        <li class="tile image" id="tile7"></li>
+        <li class="tile content" id="tile8"></li>
+      </ul>
     </section>
-    <div class="overlay overlay-scale">
-      <button type="button" class="overlay-close">Close</button>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Work</a></li>
-          <li><a href="#">Clients</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
 
     <section class="homepage-second">
       <div class="container">
@@ -94,6 +99,22 @@
         <p class="my-apps-content col-md-12">I used the lessons from <a href="https://gettingreal.37signals.com/" target="_blank">Getting Real</a>, a book by the Basecamp team about the process of building web applications and staying lean. I also changed the way I go about building a feature: Instead of first coding Ruby, then the HTML, I reversed the order to first create sketches, then create the HTML, then the Ruby. This seemed counter-intuitive for me at first, but I realized it had allowed me to spend less time making changes and more time building what I truly needed. Regarding payments, I used <a href="http://www.stripe.com" target="_blank">Stripe</a>, which offers some great documentation on how to implement it with a Rails app.</p>
       </div>
     </section>
+
+    <section>
+      <p><button id="trigger-overlay" type="button">Open Overlay</button></p>
+    </section>
+    <div class="overlay overlay-scale">
+      <button type="button" class="overlay-close">Close</button>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Work</a></li>
+          <li><a href="#">Clients</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
 
     <footer>
       <div class="container">
