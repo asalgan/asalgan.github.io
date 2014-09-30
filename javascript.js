@@ -1,7 +1,7 @@
 $(document).ready(function() { 
 
   $(window).scroll(function() {
-    $('.tile').each(function(){
+    $('.tile, .but-wait-more').each(function(){
     var imagePos = $(this).offset().top;
 
     var topOfWindow = $(window).scrollTop();
@@ -12,45 +12,46 @@ $(document).ready(function() {
   });
 
 
+  var tabItems = $('.cd-tabs-navigation a'),
+    tabContentWrapper = $('.cd-tabs-content');
 
-  var triggerBttn = document.getElementById( 'trigger-overlay' ),
-    overlay = document.querySelector( 'div.overlay' ),
-    closeBttn = overlay.querySelector( 'button.overlay-close' );
-    transEndEventNames = {
-      'WebkitTransition': 'webkitTransitionEnd',
-      'MozTransition': 'transitionend',
-      'OTransition': 'oTransitionEnd',
-      'msTransition': 'MSTransitionEnd',
-      'transition': 'transitionend'
-    },
-    transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
-    support = { transitions : Modernizr.csstransitions };
-
-  function toggleOverlay() {
-    if( classie.has( overlay, 'open' ) ) {
-      classie.remove( overlay, 'open' );
-      classie.add( overlay, 'close' );
-      var onEndTransitionFn = function( ev ) {
-        if( support.transitions ) {
-          if( ev.propertyName !== 'visibility' ) return;
-          this.removeEventListener( transEndEventName, onEndTransitionFn );
-        }
-        classie.remove( overlay, 'close' );
-      };
-      if( support.transitions ) {
-        overlay.addEventListener( transEndEventName, onEndTransitionFn );
-      }
-      else {
-        onEndTransitionFn();
-      }
+  tabItems.on('click', function(event){
+    event.preventDefault();
+    var selectedItem = $(this);
+    if( !selectedItem.hasClass('selected') ) {
+      var selectedTab = selectedItem.data('content'),
+        selectedContent = tabContentWrapper.find('li[data-content="'+selectedTab+'"]'),
+        slectedContentHeight = selectedContent.innerHeight();
+      
+      tabItems.removeClass('selected');
+      selectedItem.addClass('selected');
+      selectedContent.addClass('selected').siblings('li').removeClass('selected');
+      //animate tabContentWrapper height when content changes 
+      tabContentWrapper.animate({
+        'height': slectedContentHeight
+      }, 200);
     }
-    else if( !classie.has( overlay, 'close' ) ) {
-      classie.add( overlay, 'open' );
+
+  //hide the .cd-tabs::after element when tabbed navigation has scrolled to the end (mobile version)
+  checkScrolling($('.cd-tabs nav'));
+  $(window).on('resize', function(){
+    checkScrolling($('.cd-tabs nav'));
+    tabContentWrapper.css('height', 'auto');
+  });
+  $('.cd-tabs nav').on('scroll', function(){ 
+    checkScrolling($(this));
+  });
+
+  function checkScrolling(tabs){
+    var totalTabWidth = parseInt(tabs.children('.cd-tabs-navigation').width()),
+      tabsViewport = parseInt(tabs.width());
+    if( tabs.scrollLeft() >= totalTabWidth - tabsViewport) {
+      tabs.parent('.cd-tabs').addClass('is-ended');
+    } else {
+      tabs.parent('.cd-tabs').removeClass('is-ended');
     }
   }
-
-  triggerBttn.addEventListener( 'click', toggleOverlay );
-  closeBttn.addEventListener( 'click', toggleOverlay );
+});
 
 
 });
