@@ -162,18 +162,22 @@ nav > a > .fa {
   margin-bottom: 30px;
 }
 
-.no-gylt-img, .honeybee-img {
+.no-gylt-img, .honeybee-img, .i2i-img {
   padding: 0px;
 }
 
-.nogylt-logo, .honeybee-logo {
+.nogylt-logo, .honeybee-logo, .i2i-logo {
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
   font-size: 40px;
 }
 
-.honeybee {
+.i2i-logo {
+  padding-left: 4%;
+}
+
+.honeybee, .i2i {
   margin-top: 10%;
   float: left;
 }
@@ -265,6 +269,7 @@ nav > a > .fa {
 
 footer {
   min-height: 70px;
+  margin-top: 5%;
 }
 
 .fa {
